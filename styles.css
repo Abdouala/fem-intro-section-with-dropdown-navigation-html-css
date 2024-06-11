@@ -1,0 +1,412 @@
+/* ------------------- */
+/* Custom properties   */
+/* ------------------- */
+
+:root {
+  /* colors */
+  --clr-dark: 0, 0%, 8%;
+  --clr-light: 0, 0%, 41%;
+  --clr-white: 0, 0%, 98%;
+  --light-grey: #ededed;
+
+  /* font-weights */
+  --fw-regular: 500;
+  --fw-bold: 700;
+  
+  /* font-sizes */
+  --fs-900: 9.375rem;
+  --fs-800: 6.25rem;
+  --fs-700: 4.5rem;
+  --fs-600: 2rem;
+  --fs-500: 1.75rem;
+  --fs-400: 1.125rem;
+  --fs-300: 1rem;
+  --fs-200: 0.875rem;
+  
+  /* font-families */
+  --ff-sans-normal: "Epilogue", sans-serif;
+  
+  /* Box Shadow */
+  --shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+  rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  
+  --border: 1px solid var(--light-grey);
+  
+}
+
+
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
+
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+/* set up the body */
+body {
+  background: hsl( var(--clr-white) );
+  line-height: 1.5;
+  letter-spacing: -0.8px;
+  min-height: 100vh;
+  font-family: var(--ff-sans-normal);
+  color: hsl( var(--clr-light) );
+}
+
+/* make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+}
+
+/* make form elements easier to work with */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+header {
+  margin-block-start: 2.5rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: inherit;
+}
+
+.container-fluid {
+  width: min(100% - 3rem, 70rem);
+  /* padding-inline: 2em; */
+  margin-inline: auto;
+}
+
+.container {
+  width: min(100% - 5rem, 60rem);
+  /* padding-inline: 2em; */
+  margin-inline: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.center {
+  align-items: center;
+}
+
+.nav-open[aria-expanded="true"] + .nav-menu {
+  translate: 0;
+}
+
+.nav-open[aria-expanded="true"] ~ .overlay {
+  opacity: 0.7;
+}
+
+.nav-menu {
+  flex: auto;
+}
+
+.nav-links {
+  margin-left: 4rem;
+}
+
+.nav-item {
+  margin-left: 2rem;
+  list-style-type: none;
+}
+
+.nav-link {
+  color: inherit;
+  text-decoration: none;
+  gap: 0.4rem;
+}
+
+.nav-link:hover {
+  color: hsl( var(--clr-dark) );
+  font-weight: var(--fw-regular);
+}
+
+.left {
+  margin-left: auto;
+}
+
+.register {
+  padding: 0.5rem 1.1rem;
+  border: 1px solid hsl( var(--clr-light) );
+  border-radius: 0.5rem;
+}
+
+.register:hover {
+  border: 1px solid hsl( var(--clr-dark) );
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: hsl( var(--clr-dark) );
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 300ms ease-in-out;
+}
+
+/* Dropdown */
+
+.dropdown-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.toggle-arrow {
+  transform: rotate(180deg);
+  transition: 0.2s ease;
+}
+
+.dropdown {
+  background: hsl( var(--clr-white) );
+  box-shadow: var(--shadow);
+  border-radius: 10px;
+  position: absolute;
+  top: 70px;
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0.97) translateX(-5px);
+  transition: 0.1s ease-in-out;
+}
+
+.dropdown.active {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1) translateX(5px);
+}
+
+.dropdown ul {
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dropdown-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Fin dropdown */
+
+/* Main */
+
+.hero {
+  margin-block-start: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3rem;
+}
+
+.hero-picture-desktop {
+  order: 2;
+  margin-inline-start: auto;
+}
+
+.hero-content {
+  order: 1;
+  margin-block-start: 6rem;
+}
+
+.hero-title {
+  font-size: 4.3rem;
+  line-height: 1.1;
+  color: hsl( var(--clr-dark) );
+}
+
+.hero-description {
+  margin-block: 2.8rem;
+  font-size: 1.1rem;
+  font-weight: var(--fw-regular);
+}
+
+.learn {
+  margin-block-end: 6rem;
+}
+
+.learn a{
+  color: hsl( var(--clr-white) );
+  background: hsl( var(--clr-dark) );
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.8rem;
+  font-weight: var(--fw-regular);
+}
+
+.partners {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+@media (width > 55em) {
+  .nav-open,
+  .nav-close {
+    display: none;
+  }
+}
+
+@media (width <= 55em) {
+
+  .nav-open {
+    margin-left: auto;
+  }
+
+  .nav-close {
+    display: block;
+    margin-inline-start: auto;
+    margin-block-end: 1rem;
+    padding: 2rem;
+  }
+
+  .nav-menu {
+    position: fixed;
+    z-index: 1;
+    inset: 0 0 0 40%;
+    background: hsl( var(--clr-white) );
+    translate: 100vw 0;
+    /* transition: translate 0.5s ease-in-out; */
+  }
+
+  .nav-links {
+    margin-block-start: 1rem;
+    margin-left: 0;
+    padding-inline: 2rem;
+    flex-direction: column;
+    gap: 1.8rem;
+  }
+
+  .nav-item {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .left {
+    margin: auto;
+    text-align: center;
+  }
+
+  .register {
+    border: 0;
+    padding: 0;
+  }
+
+  .last-item {
+    padding: 0.3rem;
+    border: 1px solid hsl( var(--clr-dark) );
+    border-radius: 0.5rem;
+    text-align: center;
+  }
+
+  .dropdown {
+    display: none;
+    min-width: 100%;
+    border: none !important;
+    border-radius: 5px;
+    position: static;
+    top: 0;
+    left: 0;
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+    box-shadow: none;
+  }
+
+  .dropdown.active {
+    display: block;
+  }
+
+  .dropdown ul {
+    padding-left: 0.3rem;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    width: initial;
+  }
+
+  .hero-picture-desktop {
+    order: initial;
+    margin: auto;
+  }
+
+  .hero-content {
+    margin-block-start: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+    line-height: 1.1;
+    color: hsl( var(--clr-dark) );
+  }
+
+  .hero-description {
+    margin-block: 1.8rem;
+    font-size: 1.1rem;
+    font-weight: var(--fw-regular);
+    text-align: center;
+  }
+
+  .learn {
+    margin-block-end: 4rem;
+  }
+
+}

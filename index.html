@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+  
+  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+  
+</head>
+
+<body> 
+  <header>
+    <nav class="container-fluid flex">
+      <a href="/">
+        <img src="images/logo.svg" alt="">
+      </a>
+      <span id="nav-label" hidden>Navigation</span>
+      <button id="btnOpen" class="nav-open" aria-expanded="false" aria-labelledby="nav-label">
+        <img src="images/icon-menu.svg" alt="">
+      </button>
+      <div class="nav-menu">
+        <button id="btnClose" class="nav-close">
+          <img src="images/icon-close-menu.svg" alt="Close">
+        </button>
+        <ul class="nav-links flex">
+          <li class="nav-item">
+            <button class="nav-link dropdown-btn" data-dropdown="dropdown1" aria-expanded="false">
+              Features
+              <img src="images/icon-arrow-down.svg" alt="">
+            </button>
+            <div id="dropdown1" class="dropdown">
+              <ul>
+                <li>
+                  <a href="/" class="dropdown-link">
+                    <img src="images/icon-todo.svg" class="icon" alt=""/>
+                    <span class="dropdown-link-title">Todo List</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/" class="dropdown-link">
+                    <img src="images/icon-calendar.svg" class="icon" alt=""/>
+                    <span class="dropdown-link-title">Calendar</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/" class="dropdown-link">
+                    <img src="images/icon-reminders.svg" class="icon" alt=""/>
+                    <span class="dropdown-link-title">Reminders</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/" class="dropdown-link">
+                    <img src="images/icon-planning.svg" class="icon" alt=""/>
+                    <span class="dropdown-link-title">Planning</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link dropdown-btn" data-dropdown="dropdown2" aria-expanded="false">
+              Company
+              <img src="images/icon-arrow-down.svg" alt="">
+            </button>
+            <div id="dropdown2" class="dropdown">
+              <ul>
+                <li>
+                  <a href="/" class="dropdown-link">History</a>
+                </li>
+                <li>
+                  <a href="/" class="dropdown-link">Our Team</a>
+                </li>
+                <li>
+                  <a href="/" class="dropdown-link">Blog</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item"><a href="/" class="nav-link">Carrers</a></li>
+          <li class="nav-item"><a href="/" class="nav-link">About</a></li>
+          <li class="nav-item left"><a href="/" class="nav-link">Login</a></li>
+          <li class="nav-item last-item"><a href="/" class="nav-link register">Register</a></li>
+        </ul>
+      </div>
+      <div class="overlay"></div>
+    </nav>
+  </header>
+  <main>
+    <article class="hero container">
+      <picture class="hero-picture-desktop">
+        <source
+        media="(min-width: 55em)"
+        srcset="/images/image-hero-desktop.png"
+        width="450px"
+        >
+        <img
+        class="hero-picture-mobile"
+        src="/images/image-hero-mobile.png" alt="Hero mobile">
+      </picture>
+      <div class="hero-content">
+        <h1 class="hero-title">Make remote work</h1>       
+        <p class="hero-description">
+          Get your team in sync, no matter your location. Streamline processes,
+          create team rituals, and watch productivity soar.
+        </p>     
+        <div class="learn"><a href="/">Learn more</a></div>
+        <div class="partners">
+          <a href="/"><img src="images/client-databiz.svg" alt="Databiz"></a>
+          <a href="/"><img src="images/client-audiophile.svg" alt="Audiophile"></a>
+          <a href="/"><img src="images/client-meet.svg" alt="Meet"></a>
+          <a href="/"><img src="images/client-maker.svg" alt="Maker"></a>
+        </div>
+      </div>     
+    </article>
+    
+    <!-- <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
