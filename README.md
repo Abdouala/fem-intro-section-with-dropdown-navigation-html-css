@@ -35,7 +35,7 @@ Users should be able to:
 - [How to Build a Dropdown Menu with JavaScript](https://www.freecodecamp.org/news/how-to-build-a-dropdown-menu-with-javascript/)
 - [In Praise of the Unambiguous Click Menu](https://css-tricks.com/in-praise-of-the-unambiguous-click-menu/)
 - [Taking on a Frontend Mentor challenge | Responsive Product Preview Card Component](https://www.youtube.com/watch?v=B2WL6KkqhLQ)
-- [Building a Responsive News Homepage | HTML, SCSS, JS](https://youtu.be/QhLpMiH5Ws4?si=u8m7DxFTdsJ0Vvhe) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [Building a Responsive News Homepage | HTML, SCSS, JS](https://youtu.be/QhLpMiH5Ws4?si=u8m7DxFTdsJ0Vvhe)
 
 ## Author
 
